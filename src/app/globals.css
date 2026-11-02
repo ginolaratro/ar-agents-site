@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+/*
+  Design tokens. Light, quiet layout: near-black ink, soft gray surfaces,
+  one navy accent. Change the brand scale to re-color the whole site.
+*/
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+
+  --color-brand-50: #f2f6fb;
+  --color-brand-100: #e4ecf5;
+  --color-brand-200: #c6d6ea;
+  --color-brand-300: #9bb7d9;
+  --color-brand-400: #6990c2;
+  --color-brand-500: #4572ab;
+  --color-brand-600: #2f619f;
+  --color-brand-700: #235491;
+  --color-brand-800: #1c4475;
+  --color-brand-900: #183a62;
+  --color-brand-950: #0f2440;
+
+  --color-ink-50: #f9f9f9;
+  --color-ink-100: #f0f0f0;
+  --color-ink-200: #e9ebef;
+  --color-ink-300: #d5d8de;
+  --color-ink-400: #9a9ea6;
+  --color-ink-500: #6b6e74;
+  --color-ink-600: #55585d;
+  --color-ink-700: #3a3c3f;
+  --color-ink-800: #1f2023;
+  --color-ink-900: #08090a;
+  --color-ink-950: #000000;
+}
+
+h1, h2 {
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}

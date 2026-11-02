@@ -47,48 +47,49 @@ const AGENTS = [
 export default function HomePage() {
   return (
     <NavLayout>
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-teal-50/60 to-white">
-        <Container className="grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
-          <div>
-            <Eyebrow>AI agents for accounts receivable</Eyebrow>
-            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-              Agents that call and text your past-due customers, so you get paid.
-            </h1>
-            <p className="mt-5 max-w-xl text-lg text-slate-600">
-              {BRAND.name} works your aging report around the clock. AI voice and messaging agents follow up on every open
-              balance, take payment, set up plans, and hand the hard conversations to your team.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <PrimaryCta />
-              <SecondaryCta href="#how-it-works">See how it works</SecondaryCta>
-            </div>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
-              <li>✓ Phone, SMS and email</li>
-              <li>✓ Your brand, your rules</li>
-              <li>✓ Humans approve the exceptions</li>
-            </ul>
+      <section className="relative overflow-hidden border-b border-ink-200 bg-[radial-gradient(60%_50%_at_50%_0%,var(--color-brand-50),transparent)]">
+        <Container className="pt-20 pb-20 text-center sm:pt-28">
+          <Eyebrow>AI agents for accounts receivable</Eyebrow>
+          <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-medium leading-[1.08] text-ink-900 sm:text-6xl lg:text-[4.25rem]">
+            Agents that call and text your past-due customers, so you get paid.
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-ink-600 sm:text-xl">
+            {BRAND.name} works your aging report around the clock. AI voice and messaging agents follow up on every open
+            balance, take payment, set up plans, and hand the hard conversations to your team.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <PrimaryCta />
+            <SecondaryCta href="#how-it-works">See how it works</SecondaryCta>
           </div>
-          <CallTranscript lines={HERO_CALL} caption="Illustrative call. Agents identify the business they're calling for." />
+          <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-ink-500">
+            <li>✓ Phone, SMS and email</li>
+            <li>✓ Your brand, your rules</li>
+            <li>✓ Humans approve the exceptions</li>
+          </ul>
+          <div className="mx-auto mt-16 max-w-2xl text-left">
+            <CallTranscript lines={HERO_CALL} caption="Illustrative call. Agents identify the business they're calling for." />
+          </div>
         </Container>
       </section>
 
-      <section id="agents" className="scroll-mt-20 py-20">
+      <section id="agents" className="scroll-mt-20 py-24">
         <Container>
           <SectionHeading
+            center
             eyebrow="Meet the agents"
             title="A collections team that never runs out of hours"
             intro="Every open balance gets consistent, polite follow-up on the channel your customer actually answers."
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-14 grid gap-4 lg:grid-cols-3">
             {AGENTS.map((a) => (
-              <div key={a.name} className="flex flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-                <p className="text-sm font-semibold text-teal-700">{a.name}</p>
-                <h3 className="mt-2 text-lg font-semibold text-slate-900">{a.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{a.body}</p>
-                <ul className="mt-4 space-y-1.5 text-sm text-slate-700">
+              <div key={a.name} className="flex flex-col rounded-2xl border border-ink-200 bg-ink-50 p-7">
+                <p className="text-sm font-medium text-brand-700">{a.name}</p>
+                <h3 className="mt-3 text-xl font-medium leading-snug text-ink-900">{a.title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink-600">{a.body}</p>
+                <ul className="mt-6 space-y-2 border-t border-ink-200 pt-6 text-[15px] text-ink-700">
                   {a.points.map((p) => (
                     <li key={p} className="flex gap-2">
-                      <span className="text-teal-700" aria-hidden>✓</span>
+                      <span className="text-brand-700" aria-hidden>✓</span>
                       {p}
                     </li>
                   ))}
@@ -99,7 +100,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50 py-20">
+      <section className="border-y border-ink-200 bg-ink-50 py-24">
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading
@@ -107,10 +108,10 @@ export default function HomePage() {
               title="Reminders that turn into payments"
               intro="Customers reply to texts with questions. Agents answer instantly with the facts on the account. Anything outside the rules goes to your inbox with a summary and a suggested reply."
             />
-            <ul className="mt-6 space-y-3 text-slate-700">
-              <li>• Pay links that open straight to the balance after a quick identity check</li>
-              <li>• Replies in seconds, day or night, within your quiet hours for outbound</li>
-              <li>• Staff approve, edit or take over any conversation</li>
+            <ul className="mt-6 space-y-3 text-ink-700">
+              <li className="flex gap-3"><span className="text-brand-700" aria-hidden>✓</span>Pay links that open straight to the balance after a quick identity check</li>
+              <li className="flex gap-3"><span className="text-brand-700" aria-hidden>✓</span>Replies in seconds, day or night, within your quiet hours for outbound</li>
+              <li className="flex gap-3"><span className="text-brand-700" aria-hidden>✓</span>Staff approve, edit or take over any conversation</li>
             </ul>
           </div>
           <SmsPreview body={HERO_SMS} />
@@ -119,7 +120,7 @@ export default function HomePage() {
 
       <HowItWorks />
 
-      <section id="industries" className="scroll-mt-20 border-t border-slate-200 bg-slate-50 py-20">
+      <section id="industries" className="scroll-mt-20 py-24">
         <Container>
           <SectionHeading
             eyebrow="Industries"
